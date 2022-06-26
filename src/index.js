@@ -29,6 +29,20 @@ function getBalance(statement) {
 
   return balance;
 }
+
+function createStatementOperation(description, amount, type) {
+  const statementOperation = {
+    amount,
+    created_at: new Date(),
+    type,
+  }
+
+  if (description !== '') {
+    statementOperation.description = description;
+  }
+
+  return statementOperation;
+}
 /**
  * cpf: string
  * name: string
