@@ -135,4 +135,8 @@ app.delete("/account", verifyIfExistsAccountCPF, (request, response) => {
   return response.status(200).send(customers);
 });
 
+app.get("/accounts", (request, response) => {
+  return response.status(200).json(customers);
+});
+
 app.listen(3333);
