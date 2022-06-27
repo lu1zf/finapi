@@ -22,6 +22,8 @@ function verifyIfExistsAccountCPF(request, response, next) {
 }
 
 function getBalance(statement) {
+  if (!statement.length) return 0;
+
   const balance = statement.reduce((acc, operation) => {
     const { type, amount } = operation;
     return type === 'credit' ? acc + amount : acc - amount;
